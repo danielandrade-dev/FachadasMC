@@ -1,0 +1,93 @@
+{% extends "base.twig" %}
+
+{% block title %}Contato - {{ siteName }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Entre em Contato</h1>
+        <p>Estamos Prontos para Atender suas Necessidades em Limpeza de Fachadas</p>
+    </div>
+</section>
+
+<section class="contact-page">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Informações de Contato</h2>
+                
+                <div class="contact-item">
+                    <h3>Telefone</h3>
+                    <p><a href="tel:{{ phone }}">{{ phone }}</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:{{ email }}">{{ email }}</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Horário</h3>
+                    <p>{{ workingHours.weekdays }}</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Endereço</h3>
+                    <p>{{ address }}</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Área de Atendimento</h3>
+                    <p>Atendimento na Grande São Paulo</p>
+                    <div class="areas-list">
+                        {% for area in serviceAreas %}
+                        {% if area != 'Atendimento na Grande São Paulo' %}
+                        <span class="area-tag">{{ area }}</span>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <h2>Solicite um Orçamento</h2>
+                <form class="contact-form" method="POST" action="/?page=contato">
+                    <div class="form-group">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="servico">Serviço de Interesse</label>
+                        <select id="servico" name="servico">
+                            <option value="">Selecione um serviço</option>
+                            {% for service in services %}
+                            <option value="{{ service.title }}">{{ service.title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

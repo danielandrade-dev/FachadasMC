@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Permitir acesso direto a arquivos estáticos
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Permitir acesso à pasta public/assets
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^ - [L]
+
+# Redirecionar tudo mais para index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+

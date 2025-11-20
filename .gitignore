@@ -1,0 +1,11 @@
+/vendor/
+/cache/
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+

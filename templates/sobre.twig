@@ -1,0 +1,125 @@
+{% extends "base.twig" %}
+
+{% block title %}Sobre Nós - {{ siteName }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Sobre Nós</h1>
+        <p>Conheça nossa história e valores</p>
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container">
+        <div class="about-intro">
+            <h2>Uma Década De Excelência Em Limpeza De Fachadas</h2>
+            <p>Transformando Projetos em Realidade</p>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.projetos }}</div>
+                    <div class="stat-label">Projetos Concluídos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.experiencia }}</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.clientes }}</div>
+                    <div class="stat-label">Clientes Satisfeitos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.satisfacao }}</div>
+                    <div class="stat-label">Satisfação dos Clientes</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mission-vision-values">
+            <div class="mvv-item">
+                <h3>Missão</h3>
+                <p>{{ mission }}</p>
+            </div>
+            
+            <div class="mvv-item">
+                <h3>Visão</h3>
+                <p>{{ vision }}</p>
+            </div>
+            
+            <div class="mvv-item">
+                <h3>Valores</h3>
+                <ul>
+                    {% for value in values %}
+                    <li>{{ value }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="why-choose-section">
+            <h2>Por que escolher nossos serviços?</h2>
+            <p class="section-subtitle">Qualidade, Segurança e Tranquilidade<br>Em cada etapa do serviço prestado.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>{{ whyChooseUs.investimento.title }}</h3>
+                    <ul>
+                        {% for item in whyChooseUs.investimento.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>{{ whyChooseUs.equipe.title }}</h3>
+                    <ul>
+                        {% for item in whyChooseUs.equipe.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>{{ whyChooseUs.seguranca.title }}</h3>
+                    <ul>
+                        {% for item in whyChooseUs.seguranca.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>{{ whyChooseUs.garantias.title }}</h3>
+                    <ul>
+                        {% for item in whyChooseUs.garantias.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="service-areas">
+            <h2>Área de Atendimento</h2>
+            <div class="areas-list">
+                {% for area in serviceAreas %}
+                <span class="area-tag">{{ area }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <p>Estamos Prontos para Atender suas Necessidades</p>
+        <a href="/?page=contato" class="btn btn-primary">Fale Conosco</a>
+    </div>
+</section>
+{% endblock %}
+
+

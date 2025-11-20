@@ -1,0 +1,115 @@
+{% extends "base.twig" %}
+
+{% block title %}Nossos Serviços - {{ siteName }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Nossos Serviços</h1>
+        <p>Soluções completas e especializadas para limpeza de fachadas</p>
+    </div>
+</section>
+
+<section class="services-page">
+    <div class="container">
+        {% for service in services %}
+        <div class="service-page-item" id="{{ service.title|lower|replace({' ': '-', 'ç': 'c', 'ã': 'a'}) }}">
+            <div class="service-page-content">
+                <h2>{{ service.title }}</h2>
+                <p class="service-description">{{ service.description }}</p>
+                <ul class="service-features">
+                    {% for feature in service.features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        
+        <!-- Ancoragem e Linha de Vida - Detalhado -->
+        <div class="service-page-item service-detailed" id="ancoragem-linha-vida">
+            <div class="service-page-content">
+                <h2>Instalação de Ancoragem e Linha de Vida</h2>
+                <p class="service-description">Segurança e conformidade para sua equipe</p>
+                <p>Instalamos Sistemas de Proteção, para Trabalhos em Altura, Garantindo a Segurança da Sua Equipe e Conformidade com as Normas NR-35. Oferecemos Soluções Personalizadas para Cada Tipo de Fachada.</p>
+                
+                <div class="service-subsections">
+                    <div class="service-subsection">
+                        <h3>Sistema de Ancoragem Permanente</h3>
+                        <p>Instalação de linha de vida permanente em aço inox</p>
+                    </div>
+                    <div class="service-subsection">
+                        <h3>Postes de Ancoragem</h3>
+                        <p>Postes fabricados conforme NBR 16325</p>
+                    </div>
+                    <div class="service-subsection">
+                        <h3>Teste de Resistência</h3>
+                        <p>Ensaio de arrancamento estático com laudo</p>
+                    </div>
+                    <div class="service-subsection">
+                        <h3>Instalação Profissional</h3>
+                        <p>Equipe técnica especializada em instalação</p>
+                    </div>
+                </div>
+                
+                <div class="certifications">
+                    <h3>Certificações e Normas</h3>
+                    <ul>
+                        <li>NR-35 - Trabalho em Altura</li>
+                        <li>NBR 16325 - Postes de Linha de Vida</li>
+                        <li>ASTM A351 - Aço Inox</li>
+                    </ul>
+                </div>
+                
+                <div class="documentation">
+                    <h3>Documentação Técnica Completa</h3>
+                    <ul>
+                        <li>ART de Projeto e Instalação</li>
+                        <li>Laudo de Teste de Qualidade e Conformidade</li>
+                        <li>Ensaio de Arrancamento Estático com Laudo</li>
+                        <li>Numeração com Lacres e Documentação Fotográfica</li>
+                        <li>Seguro de Responsabilidade Técnica</li>
+                    </ul>
+                </div>
+                
+                <div class="guarantees">
+                    <h3>Garantias e Segurança</h3>
+                    <ul>
+                        <li>Engenharia Responsável pelo Projeto</li>
+                        <li>Memorial de Cálculo Detalhado</li>
+                        <li>Certificação NR-35</li>
+                    </ul>
+                </div>
+                
+                <div class="offerings">
+                    <h3>O que oferecemos:</h3>
+                    <ul>
+                        <li><strong>Sistema completo de segurança com certificação NR-35</strong> - Sistemas homologados e certificados, seguindo todas as normas de segurança para trabalhos em altura.</li>
+                        <li><strong>Instalação rápida por equipe especializada</strong> - Equipe técnica altamente qualificada para instalação rápida e segura dos sistemas.</li>
+                        <li><strong>Laudo técnico detalhado com memorial de cálculo</strong> - Documentação técnica completa com memorial de cálculo para linha de vida, garantindo a segurança estrutural do sistema.</li>
+                        <li><strong>Fabricação de postes conforme NBR 16325</strong> - Postes de linha de vida fabricados seguindo rigorosamente a norma NBR 16325, garantindo qualidade e segurança.</li>
+                        <li><strong>Materiais em aço inox ASTM A351</strong> - Utilizamos materiais em aço inox de alta qualidade, conforme especificação ASTM A351, para máxima durabilidade e resistência.</li>
+                        <li><strong>Suporte técnico 24/7 para sua equipe</strong> - Assistência técnica permanente, disponível 24 horas por dia, 7 dias por semana.</li>
+                        <li><strong>Treinamento completo de utilização</strong> - Capacitação detalhada da sua equipe para utilização segura dos sistemas de ancoragem.</li>
+                        <li><strong>Manutenção preventiva mensal</strong> - Programa regular de inspeção e manutenção para garantir a segurança contínua dos sistemas.</li>
+                        <li><strong>Sistemas permanentes e temporários</strong> - Soluções adaptáveis para diferentes necessidades, desde instalações fixas até sistemas móveis.</li>
+                        <li><strong>Projeto personalizado para sua fachada</strong> - Desenvolvimento de projeto específico para as características da sua fachada.</li>
+                        <li><strong>ART (Anotação de Responsabilidade Técnica) garantida</strong> - Garantimos a ART para todos os projetos, com engenharia responsável e conformidade legal.</li>
+                        <li><strong>Engenharia responsável pelo projeto</strong> - Projetos desenvolvidos e assinados por engenheiros especializados em segurança do trabalho.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Solicite um Orçamento</h2>
+        <p>Entre em contato conosco para conhecer nossos serviços</p>
+        <a href="/?page=contato" class="btn btn-primary">Fale Conosco</a>
+    </div>
+</section>
+{% endblock %}
+
+
